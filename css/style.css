@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #000000, #ffffff);
+    font-family: sans-serif;
+    overflow-x: hidden;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .clique {
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+    color: white;
+  }
+  
+  .clique:hover {
+    transform: scale(1.1);
+  }
+  
+  .coracao.animado {
+    display: inline-block;
+    animation: pulseHeart 1s infinite alternate;
+  }
+  
+  .mensagem-topo {
+    display: none;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: gold;
+    text-shadow: 2px 2px 5px rgba(255, 215, 0, 0.7);
+    animation: aparecer 1.5s ease-out;
+    text-align: center;
+    width: 100%;
+    margin-top: 30px;
+    padding: 0 10px;
+  }
+  
+  .mensagem-frase {
+    display: none;
+    color: white;
+    font-size: 1.6rem;
+    text-align: center;
+    margin-top: 80px;
+    text-shadow: 1px 1px 4px rgba(255, 215, 0, 0.6);
+    animation: aparecer 1.5s ease-out;
+    font-weight: 600;
+    padding: 0 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .botao-vermelho {
+    margin-top: 40px;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    color: red;
+    border: 2px solid red;
+    background-color: transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .botao-vermelho:hover {
+    background-color: red;
+    color: white;
+  }
+  
+  .lembranca {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .imagem-lembranca {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  }
+  
+  .imagem-lembranca.grande {
+    max-width: 850px;
+    margin-top: 20px;
+  }
+  
+  .texto-lembranca {
+    color: #fff;
+    font-size: 1.6rem;
+    margin-top: 25px;
+    text-shadow: 2px 2px 6px rgba(255, 215, 0, 0.4);
+    padding: 0 25px;
+    font-weight: 600;
+    line-height: 1.6;
+    text-align: center;
+  }
+  
+
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease;
+  }
+  
+  .scroll-reveal.reveal {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* RESPONSIVO */
+  @media (max-width: 600px) {
+    .mensagem-topo {
+      font-size: 1.8rem;
+    }
+  
+    .mensagem-frase {
+      font-size: 1.2rem;
+      margin-top: 60px;
+    }
+  
+    .clique {
+      font-size: 1.5rem;
+    }
+  
+    .botao-vermelho {
+      font-size: 1rem;
+      padding: 10px 20px;
+    }
+  
+    .texto-lembranca {
+      font-size: 1.1rem;
+    }
+  }
+.texto-colada {
+    margin-bottom: -10px;
+  }
+  
+  

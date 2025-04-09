@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feliz Aniversário</title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <!-- MÚSICA DE FUNDO -->
+  <audio id="musicaFundo" src="musica/hush hush.mp3" autoplay loop></audio>
+
+  <div class="mensagem-topo scroll-reveal" id="mensagem">
+    PARABÉNS MEU DOCINHO DE COCO
+  </div>
+
+  <div class="mensagem-frase scroll-reveal" id="frase">
+    Que Deus faça você feliz e que você consiga tudo o que sonhar meu lindão, você é um puta de um cara incrível e se precisar sempre estarei aqui com você meu tigrão
+  </div>
+
+  <div class="container" id="container-botao-inicial">
+    <p class="clique" id="botao-clique">
+      <span class="coracao animado">❤️</span>
+      Clique aqui
+      <span class="coracao animado">❤️</span>
+    </p>
+  </div>
+
+  <div id="segunda-parte" class="segunda-parte" style="display: none;">
+    <button class="botao-vermelho scroll-reveal" id="botao-memoria">Clique aqui ❤️</button>
+  
+    <div id="lembranca" class="lembranca scroll-reveal" style="display: none;">
+      <img src="imagens/Lembrança.jpeg" alt="Lembrança" class="imagem-lembranca">
+      <p class="texto-lembranca scroll-reveal">
+        Lembra daqui??? foi aqui onde a gente se conheceu, exatamente nesse lugar desse jogo, dede fez a boa para a gente em kkkk
+      </p>
+  
+      <p class="texto-lembranca texto-colada scroll-reveal">
+        E nemm me fale desse aqui
+      </p>      
+      <img src="imagens/LembrançaAF.jpeg" alt="Outra Lembrança" class="imagem-lembranca grande scroll-reveal">
+  
+      <p class="texto-lembranca scroll-reveal">
+        lembra desse lugar? piroca né, onde o lindao ai ganhou o primeiro secreto, af, deixou eu comendo poeira na época da nossa guerrinha, mas agr o pai domina, n é segredo. Pó lek, que época boa da poha em, nossa senhora, bate até uma sdd, isso já faz sla, uns 3 a 4 anos, puuta que pariu, muuito tempo filho, já passamos por poucas e boas juntos em meu garoto, agr o cara se tornou um homem
+      </p>
+
+      <img src="imagens/Neanderthal.jpeg" alt="Mais uma lembrança" class="imagem-lembranca grande scroll-reveal">
+      <p class="texto-lembranca scroll-reveal">
+        Olha isso lek, cara saiu de um neanderthal para o cara mais bonito na terra, caio castro q se cuide q tem outra beldade no pedaço, cara so n está igual o ramon dino por causa do metabolismo, saiu de uma bola para um palito em 2 dias, se loko kkkkkkkkkkkkkk. Mas é isso meu amorzinho, espero q aproveite o seu dia incrivel, beijo na bunda. <br>
+        Com Amor, Cassimiro.
+      </p>      
+    </div>
+  </div>
+
+  <script>
+    const botao = document.getElementById('botao-clique');
+    const containerBotao = document.getElementById('container-botao-inicial');
+    const mensagem = document.getElementById('mensagem');
+    const frase = document.getElementById('frase');
+    const segundaParte = document.getElementById('segunda-parte');
+    const botaoMemoria = document.getElementById('botao-memoria');
+    const lembranca = document.getElementById('lembranca');
+    const musica = document.getElementById('musicaFundo');
+
+    botao.addEventListener('click', () => {
+      containerBotao.style.display = 'none';
+      mensagem.style.display = 'block';
+      frase.style.display = 'block';
+      segundaParte.style.display = 'block';
+
+      // Tocar música de fundo com volume baixo
+      musica.volume = 0.1;
+      musica.play().catch(() => {});
+    });
+
+    botaoMemoria.addEventListener('click', () => {
+      botaoMemoria.style.display = 'none';
+      lembranca.style.display = 'block';
+    });
+
+    // Scroll reveal
+    const elementosRevelar = document.querySelectorAll('.scroll-reveal');
+    const observer = new IntersectionObserver((entradas) => {
+      entradas.forEach((entrada) => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add('reveal');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    elementosRevelar.forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
